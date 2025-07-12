@@ -13,11 +13,11 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 from pathlib import Path
 import environ
 
-env = environ.Env()
-environ.Env.read_env()  # reads the .env file
-
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+
+env = environ.Env()
+environ.Env.read_env(BASE_DIR / ".env")
 
 TOKEN_EXPIRY_HOURS = env.int("TOKEN_EXPIRY_HOURS", 1)
 
