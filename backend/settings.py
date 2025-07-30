@@ -30,7 +30,7 @@ SECRET_KEY = "django-insecure-oyvwx=pq((3ej6i&gt&35*a6*+s*ri!op&x-^^65x%=xcm^3y-
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["localhost"]
 
 
 CORS_ALLOWED_ORIGINS = ["http://localhost:3000"]
@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     "rest_framework.authtoken",
     "core",
     "corsheaders",
-    'django_extensions'
+    "django_extensions",
 ]
 
 MIDDLEWARE = [
