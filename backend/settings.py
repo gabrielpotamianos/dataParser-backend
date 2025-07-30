@@ -21,7 +21,6 @@ environ.Env.read_env(BASE_DIR / ".env")
 
 TOKEN_EXPIRY_HOURS = env.int("TOKEN_EXPIRY_HOURS", 1)
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
@@ -43,6 +42,7 @@ INSTALLED_APPS = [
     "rest_framework.authtoken",
     "core",
     "corsheaders",
+    'django_extensions'
 ]
 
 MIDDLEWARE = [
