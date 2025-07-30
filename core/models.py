@@ -18,10 +18,12 @@ class Candidates(models.Model):
     head_line = models.CharField(max_length=255, blank=True, null=True)
     location = models.CharField(max_length=255, blank=True, null=True)
     about = models.TextField(blank=True, null=True)
-    experience = models.JSONField()
-    skills = models.JSONField()
+    education = models.JSONField(blank=True, null=True)
+    experience = models.JSONField(blank=True, null=True)
+    skills = models.JSONField(blank=True, null=True)
     notes = models.TextField(blank=True, null=True)
-    created_at = models.DateTimeField()
+    url = models.CharField(max_length=255, blank=True, null=True)
+    created_at = models.DateTimeField(blank=False, null=False)
 
     class Meta:
         db_table = "candidates"

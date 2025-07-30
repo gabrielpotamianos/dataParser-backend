@@ -29,12 +29,12 @@ TOKEN_EXPIRY_HOURS = env.int("TOKEN_EXPIRY_HOURS", 1)
 SECRET_KEY = "django-insecure-oyvwx=pq((3ej6i&gt&35*a6*+s*ri!op&x-^^65x%=xcm^3y-"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = []
 
 
-# Application definition
+CORS_ALLOWED_ORIGINS = ["http://localhost:3000"]
 
 INSTALLED_APPS = [
     "django.contrib.auth",
@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     "rest_framework",
     "rest_framework.authtoken",
     "core",
+    "corsheaders",
 ]
 
 MIDDLEWARE = [
@@ -49,6 +50,7 @@ MIDDLEWARE = [
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "corsheaders.middleware.CorsMiddleware",
 ]
 
 ROOT_URLCONF = "backend.urls"
