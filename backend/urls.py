@@ -17,6 +17,15 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import path
+from backend import settings
 import core.views as views
+from django.conf.urls.static import static
 
-urlpatterns = [path("login/", views.login), path("save-profile/", views.save_profile)]
+urlpatterns = [
+    path("login/", views.login),
+    path("save-profile/", views.save_profile),
+    path("candidates/", views.get_candidates),
+]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -23,7 +23,8 @@ class Candidates(models.Model):
     skills = models.JSONField(blank=True, null=True)
     notes = models.TextField(blank=True, null=True)
     url = models.CharField(max_length=255, blank=True, null=True)
-    created_at = models.DateTimeField(blank=False, null=False)
+    created_at = models.DateTimeField(blank=False, null=False, auto_now_add=True)
+    updated_at = models.DateTimeField(blank=False, null=False, auto_now=True)
 
     class Meta:
         db_table = "candidates"

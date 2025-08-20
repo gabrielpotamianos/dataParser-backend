@@ -30,10 +30,17 @@ SECRET_KEY = "django-insecure-oyvwx=pq((3ej6i&gt&35*a6*+s*ri!op&x-^^65x%=xcm^3y-
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [""]
+ALLOWED_HOSTS = []
+
+MEDIA_URL = "/media/"
+
+MEDIA_ROOT = str(BASE_DIR / "media")
 
 
-CORS_ALLOWED_ORIGINS = [""]
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3000",
+    "https://dataparser-candidates.gabri-the-dev.com",
+]
 
 INSTALLED_APPS = [
     "django.contrib.auth",
